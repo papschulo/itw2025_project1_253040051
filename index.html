@@ -14,6 +14,9 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <!-- navbar -->
@@ -54,7 +57,7 @@
         <div class="judulabout">
           <h2>About Me</h2>
         </div>
-        <div class="aboutcontent">
+        <div class="aboutcontent" data-aos="fade-down" data-aos-duration="1000">
           <p>
             Halo perkenalkan saya Ocky Yudha Pranata, seorang mahasiswa Jurusan
             Teknik Informatika semester 1. Selama tiga bulan berkuliah ini saya
@@ -79,10 +82,19 @@
     <!-- projects -->
     <section id="projects">
       <div class="container-2">
-        <div class="judulprojects">
+        <div
+          class="judulprojects"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
           <h2>My Projects</h2>
         </div>
-        <div class="thumbnail">
+        <div
+          class="thumbnail"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          data-aos-duration="300"
+        >
           <ul class="gallery">
             <li>
               <img src="img/tugas kampus 1.png" alt="Tugas Kampus 1" />
@@ -105,16 +117,26 @@
     <!-- skill -->
     <section id="skill">
       <div class="container-3">
-        <div class="judulskill">
+        <div class="judulskill" data-aos="fade-down" data-aos-duration="1000">
           <h2>My Skill</h2>
         </div>
         <div class="row">
-          <div class="col">
+          <div
+            class="col"
+            data-aos="fade-up-right"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
             <a href="#">
               <img src="img/pic 1.png" alt="HTML" />
             </a>
           </div>
-          <div class="col">
+          <div
+            class="col"
+            data-aos="fade-up-left"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
             <a href="#">
               <img src="img/pic 2.png" alt="CSS" />
             </a>
@@ -126,7 +148,7 @@
 
     <!-- contact -->
     <section id="contact">
-      <div class="container-4">
+      <div class="container-4" data-aos="fade-down" data-aos-duration="1000">
         <h2>Contact Me</h2>
         <form>
           <div class="form-group">
@@ -159,5 +181,26 @@
       </div>
     </section>
     <!-- contact end -->
+    <!-- script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script>
+      gsap.from(".navbar", { duration: 1, y: -100, opacity: 0, ease: "sine" });
+      gsap.from(".content img", {
+        duration: 1,
+        opacity: 0,
+        rotateY: 360,
+        delay: 0.3,
+      });
+      gsap.from(".sapaan", { duration: 1, x: -70, opacity: 0, delay: 1 });
+      gsap.from(".tagline", { duration: 1, x: -70, opacity: 0, delay: 1 });
+      gsap.from(".judulabout", { opacity: 0, delay: 2 });
+    </script>
   </body>
 </html>
