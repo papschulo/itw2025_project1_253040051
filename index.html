@@ -58,14 +58,17 @@
           <h2>About Me</h2>
         </div>
         <div class="aboutcontent" data-aos="fade-down" data-aos-duration="1000">
-          <p>
+          <p class="col-1p">
             Halo perkenalkan saya Ocky Yudha Pranata, seorang mahasiswa Jurusan
             Teknik Informatika semester 1. Selama tiga bulan berkuliah ini saya
             sudah mampu membuat website sederhana. Pengalaman awal ini menjadi
             langkah penting bagi saya untuk memahami dasar-dasar pengembangan
             web, mulai dari struktur HTML, styling dengan CSS, hingga logika
             dasar pemrograman. Saya terus berusaha memperkuat pondasi ini agar
-            dapat melangkah lebih jauh dalam dunia teknologi. Selain membangun
+            dapat melangkah lebih jauh dalam dunia teknologi. 
+          </p>
+          <p class="col-2p">
+            Selain membangun
             website sederhana, saya juga mulai membiasakan diri dengan berbagai
             tools dan konsep yang relevan dalam pengembangan perangkat lunak.
             Setiap proyek kecil yang saya kerjakan membantu saya memahami
@@ -150,12 +153,23 @@
     <section id="contact">
       <div class="container-4" data-aos="fade-down" data-aos-duration="1000">
         <h2>Contact Me</h2>
-        <form>
+        <div class="container-alert dis-none">
+          <div class="alert-text">
+            <strong>Terimakasih!</strong> Pesan anda sudah terkirim.
+          </div>
+          <div class="alert-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <form name="submit-to-google-sheet">
           <div class="form-group">
             <label for="name">Name</label>
             <input
               type="text"
-              name="name"
+              name="nama"
               placeholder="Your Full Name"
               required
             />
@@ -171,16 +185,23 @@
           </div>
           <div class="form-group">
             <label for="Message">Message</label>
-            <textarea
-              name="Message"
-              placeholder="Enter your message"
-            ></textarea>
+            <textarea name="pesan" placeholder="Enter your message"></textarea>
           </div>
-          <button type="submit">Send Message</button>
+          <div class="container-button">
+            <button type="submit" class="btn-submit">Send Message</button>
+            <!-- btn loading -->
+            <button type="button" class="btn dis-none">
+              <span class="btn__text">Send Message</span>
+            </button>
+          </div>
         </form>
       </div>
     </section>
     <!-- contact end -->
+
+    <!-- script java btn loading -->
+    <script src="js/script.js"></script>
+
     <!-- script AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -201,6 +222,37 @@
       gsap.from(".sapaan", { duration: 1, x: -70, opacity: 0, delay: 1 });
       gsap.from(".tagline", { duration: 1, x: -70, opacity: 0, delay: 1 });
       gsap.from(".judulabout", { opacity: 0, delay: 2 });
+    </script>
+    <!-- script contact form -->
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxAKRJYC5GMNlGGqS1gRjYhafQtxr6rvmtCWyWCkLXNUCuRm5fK0wMkkVVe3tlNolokmQ/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const btnKirim = document.querySelector(".btn-submit");
+      const btnLoading = document.querySelector(".btn");
+      const containerAlert = document.querySelector(".container-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // disaat tombol submit diklik
+        // tampilkan tombol kirim/loading, hilangkan tombol kirim
+        btnKirim.classList.toggle("dis-none");
+        btnLoading.classList.toggle("dis-none");
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            // tampilkan tombol kirim, hilangkan tombol loading
+            btnKirim.classList.toggle("dis-none");
+            btnLoading.classList.toggle("dis-none");
+            // tampilkan alert
+            containerAlert.classList.toggle("dis-none");
+            // reset form
+            form.reset();
+
+            console.log("Success!", response)
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
     </script>
   </body>
 </html>
