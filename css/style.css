@@ -10,59 +10,117 @@ body {
 }
 
 /* navbar section*/
-.judulnav {
-  font-size: 30px;
-  font-family: "Sour Gummy", sans-serif;
-  color: white;
-  margin-right: 40px;
+.navbar {
+  background-color: #1b3c53;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+  border-bottom: 3px solid black;
+  align-items: center;
 }
 
-.judulnav span {
+.navbar span {
   color: #d2c1b6;
 }
 
-.navbar {
-  background-color: #1b3c53;
+.navbar ul {
+  width: auto;
+  list-style-type: none;
   display: flex;
-  justify-content: space-between;
-  height: 50px;
+  justify-content: flex-end;
   align-items: center;
-  border-bottom: 3px solid black;
-  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.4);
-  position: fixed;
-  width: 100%;
-  top: 0;
   z-index: 999;
 }
 
-.navbar ul {
+.navbar li {
+  height: 50px;
   display: flex;
-  list-style: none;
-  justify-content: space-evenly;
-  width: 30%;
+  align-items: center;
 }
 
-.navbar li a {
-  color: white;
+.navbar a {
+  width: 100%;
+  padding: 0 15px;
   text-decoration: none;
+  color: white;
   display: flex;
-  justify-content: space-around;
-  font-size: 14px;
-  font-weight: 800;
-  transition: ease-in-out 0.2s;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .navbar a:hover {
-  color: rgb(129, 129, 129);
+  color: #d2c1b6;
 }
 
+.navbar li:nth-child(6) {
+  display: none;
+}
+
+.judul-nav a {
+  height: 100%;
+  font-size: 24px;
+  margin-right: auto;
+  font-family: "Sour Gummy", sans-serif;
+}
+
+.judul-nav {
+  height: 50px;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* hamburger menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 42px;
+  height: 28px;
+  top: -2px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+}
+
+/* hamburger menu animation */
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform-origin: 0 0;
+  transform: rotate(45deg) translate(1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform-origin: 0 0;
+  transform: rotate(-45deg) translate(-3px, 1px);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform-origin: 0 0;
+  transform: scale(0);
+}
 /* home section */
 
 #home {
-  border-bottom: 2px solid black;
+  z-index: 9999;
 }
 
-.content {
+.container-home {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -70,6 +128,7 @@ body {
   margin: 8rem auto;
   width: 1000px;
   padding: 20px 20px;
+  z-index: 999;
 }
 
 .content-desc {
@@ -109,9 +168,6 @@ body {
 }
 
 /* about me section */
-#about {
-  border-bottom: 2px solid black;
-}
 .container-about {
   display: flex;
   flex-direction: column;
@@ -151,10 +207,6 @@ body {
 }
 
 /* projects section */
-#projects {
-  border-bottom: 2px solid black;
-}
-
 .container-2 {
   width: 1400px;
   margin: 0 auto;
@@ -188,7 +240,6 @@ body {
 
 /* skill section */
 .container-3 {
-  border-bottom: 2px solid black;
   padding-bottom: 40px;
 }
 
@@ -211,7 +262,7 @@ body {
 
 .col a img {
   scale: 0.8;
-  z-index: -9999;
+  z-index: -999;
   transition: 0.2s ease-in-out;
 }
 
@@ -351,11 +402,17 @@ textarea {
 /* tablet */
 @media screen and (max-width: 768px) {
   /* navbar */
-  .navbar ul {
-    width: 50%;
+  .navbar a {
+    font-size: 14px;
+    padding: 0 10px;
   }
 
-  .content {
+  .judul-nav a {
+    font-size: 22px;
+  }
+
+  /* hero */
+  .container-home {
     width: 80%;
   }
 
@@ -388,7 +445,7 @@ textarea {
   .aboutcontent p {
     width: 70%;
     margin: 0 auto;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .aboutcontent {
@@ -428,16 +485,34 @@ textarea {
     width: 70%;
   }
 }
-/* ukuran hp */
+/* mobile  */
 @media screen and (max-width: 576px) {
-  .navbar li a {
-    font-size: 10px;
-  }
-  .judulnav {
-    font-size: 20px;
+  /* navbar */
+  .navbar ul {
+    position: absolute;
+    top: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 20vh;
+    width: 100%;
+    background-color: #1b3c53;
+    z-index: -999;
+    transform: translatex(100%);
   }
 
-  .content {
+  .navbar ul.slide {
+    transform: translatex(0);
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  /* hero */
+  .container-home {
+    z-index: -99;
     display: flex;
     width: 80%;
     flex-direction: column;

@@ -21,6 +21,9 @@
   <body>
     <!-- navbar -->
     <nav class="navbar">
+      <div class="judul-nav">
+        <a href="#home">Ocky<span>Yudha</span></a>
+      </div>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -28,24 +31,30 @@
         <li><a href="#skill">Skills</a></li>
         <li><a href="">Contact</a></li>
       </ul>
-      <div class="judulnav">
-        <h4>ocky<span>yudha</span></h4>
+      <div class="menu-toggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </nav>
     <!-- navbar end -->
 
     <!-- home -->
-    <section class="hero" id="home">
+    <section class="home" id="home">
       <main class="content">
-        <img src="img/ocky.jpg" alt="" />
-        <div class="content-desc">
-          <p class="sapaan">
-            Hai brads, saya <span class="nama">Ocky Yudha Pranata</span> College
-            Student & Fitness Enthusiast
-          </p>
-          <span class="tagline"
-            >Ngoding itu rumit dan sulit dimengerti kan?</span
-          >
+        <div class="container-home">
+          <img src="img/ocky.jpg" alt="" />
+          <div class="content-desc">
+            <p class="sapaan">
+              Hai brads, saya
+              <span class="nama">Ocky Yudha Pranata</span> College Student &
+              Fitness Enthusiast
+            </p>
+            <span class="tagline"
+              >Ngoding itu rumit dan sulit dimengerti kan?</span
+            >
+          </div>
         </div>
       </main>
     </section>
@@ -65,17 +74,16 @@
             langkah penting bagi saya untuk memahami dasar-dasar pengembangan
             web, mulai dari struktur HTML, styling dengan CSS, hingga logika
             dasar pemrograman. Saya terus berusaha memperkuat pondasi ini agar
-            dapat melangkah lebih jauh dalam dunia teknologi. 
+            dapat melangkah lebih jauh dalam dunia teknologi.
           </p>
           <p class="col-2p">
-            Selain membangun
-            website sederhana, saya juga mulai membiasakan diri dengan berbagai
-            tools dan konsep yang relevan dalam pengembangan perangkat lunak.
-            Setiap proyek kecil yang saya kerjakan membantu saya memahami
-            bagaimana solusi digital dapat diolah dari sebuah ide menjadi
-            sesuatu yang benar-benar dapat digunakan. Ke depan, saya ingin terus
-            mengasah keterampilan ini melalui eksplorasi, praktik, dan proyek
-            nyata agar kemampuan saya berkembang secara konsisten.
+            Selain membangun website sederhana, saya juga mulai membiasakan diri
+            dengan berbagai tools dan konsep yang relevan dalam pengembangan
+            perangkat lunak. Setiap proyek kecil yang saya kerjakan membantu
+            saya memahami bagaimana solusi digital dapat diolah dari sebuah ide
+            menjadi sesuatu yang benar-benar dapat digunakan. Ke depan, saya
+            ingin terus mengasah keterampilan ini melalui eksplorasi, praktik,
+            dan proyek nyata agar kemampuan saya berkembang secara konsisten.
           </p>
         </div>
       </div>
@@ -244,7 +252,7 @@
             // reset form
             form.reset();
 
-            console.log("Success!", response)
+            console.log("Success!", response);
           })
           .catch((error) => console.error("Error!", error.message));
       });
