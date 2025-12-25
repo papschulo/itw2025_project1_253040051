@@ -29,7 +29,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Project</a></li>
         <li><a href="#skill">Skills</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="menu-toggle">
         <input type="checkbox" />
@@ -44,16 +44,35 @@
     <section class="home" id="home">
       <main class="content">
         <div class="container-home">
-          <img src="img/ocky.jpg" alt="" />
+          <img src="img/ocky.jpg" alt="Ocky" class="heroimg" />
           <div class="content-desc">
             <p class="sapaan">
               Hai brads, saya
-              <span class="nama">Ocky Yudha Pranata</span> College Student &
-              Fitness Enthusiast
+              <span class="nama">Ocky Yudha Pranata</span>Student & Fitness
+              Enthusiast
             </p>
             <span class="tagline"
               >Ngoding itu rumit dan sulit dimengerti kan?</span
             >
+            <div class="container-home2">
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com/papschulo"
+                    target="_blank"
+                    rel="noopener"
+                    rel="noreferrer"
+                  >
+                    <img src="img/github.png" alt="github" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact">
+                    <button type="button">Contact Me</button>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </main>
@@ -68,22 +87,14 @@
         </div>
         <div class="aboutcontent" data-aos="fade-down" data-aos-duration="1000">
           <p class="col-1p">
-            Halo perkenalkan saya Ocky Yudha Pranata, seorang mahasiswa Jurusan
-            Teknik Informatika semester 1. Selama tiga bulan berkuliah ini saya
-            sudah mampu membuat website sederhana. Pengalaman awal ini menjadi
-            langkah penting bagi saya untuk memahami dasar-dasar pengembangan
-            web, mulai dari struktur HTML, styling dengan CSS, hingga logika
-            dasar pemrograman. Saya terus berusaha memperkuat pondasi ini agar
-            dapat melangkah lebih jauh dalam dunia teknologi.
-          </p>
-          <p class="col-2p">
-            Selain membangun website sederhana, saya juga mulai membiasakan diri
-            dengan berbagai tools dan konsep yang relevan dalam pengembangan
-            perangkat lunak. Setiap proyek kecil yang saya kerjakan membantu
-            saya memahami bagaimana solusi digital dapat diolah dari sebuah ide
-            menjadi sesuatu yang benar-benar dapat digunakan. Ke depan, saya
-            ingin terus mengasah keterampilan ini melalui eksplorasi, praktik,
-            dan proyek nyata agar kemampuan saya berkembang secara konsisten.
+            Saya adalah seorang mahasiswa Teknik Informatika semester 1 yang
+            memiliki antusiasme tinggi dalam pengembangan web, khususnya dalam
+            membangun fondasi visual menggunakan HTML dan CSS. Di luar dunia
+            kode, saya adalah seorang fitness enthusiast aktif sejak 2023.
+            Kedisiplinan dan dedikasi yang saya pelajari dari gaya hidup sehat
+            ini membentuk cara kerja saya dalam memecahkan masalah teknis:
+            konsisten, detail, dan selalu berorientasi pada kemajuan
+            berkelanjutan.
           </p>
         </div>
       </div>
@@ -216,7 +227,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
     <script>
       gsap.from(".navbar", { duration: 1, y: -100, opacity: 0, ease: "sine" });
-      gsap.from(".content img", {
+      gsap.from(".content .heroimg", {
         duration: 1,
         opacity: 0,
         rotateY: 360,
@@ -225,6 +236,12 @@
       gsap.from(".sapaan", { duration: 1, x: -70, opacity: 0, delay: 1 });
       gsap.from(".tagline", { duration: 1, x: -70, opacity: 0, delay: 1 });
       gsap.from(".judulabout", { opacity: 0, delay: 2 });
+      gsap.from(".container-home2", {
+        duration: 1,
+        x: -70,
+        opacity: 0,
+        delay: 1,
+      });
     </script>
     <!-- script contact form -->
     <script>
