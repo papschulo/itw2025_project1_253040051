@@ -129,7 +129,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 100px 0;
+  margin: 100px auto;
   width: auto;
   padding: 20px 20px;
   z-index: 999;
@@ -139,7 +139,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
+  width: 20%;
   margin-left: 50px;
 }
 
@@ -501,23 +501,52 @@ textarea {
   }
 
   /* hero */
-  .content img {
-    width: 200px;
-    height: 200px;
-  }
-
   .content-desc .sapaan span {
     font-size: 20px;
   }
 
-  .content .sapaan {
+  .content-desc .sapaan {
     font-size: 16px;
     display: flex;
     line-height: 1.5;
+    text-align: center;
   }
 
-  .content .tagline {
+  .content-desc .tagline {
     line-height: 1.5;
+    text-align: center;
+  }
+
+  .content-desc {
+    padding: 40px 0;
+    display: flex;
+    margin: auto;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+  }
+
+  .container-home2 ul {
+    width: 100%;
+  }
+
+  .container-home2 li {
+    display: flex;
+    justify-content: center;
+  }
+
+  .container-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-home .heroimg {
+    width: 250px;
+    height: 250px;
+    margin: auto;
   }
 
   /* about */
@@ -568,6 +597,7 @@ textarea {
     width: 70%;
   }
 }
+
 /* mobile  */
 @media screen and (max-width: 576px) {
   /* navbar */
@@ -610,7 +640,6 @@ textarea {
   }
 
   .container-home .heroimg {
-    margin-left: 20px;
     width: 200px;
     height: 200px;
   }
@@ -620,8 +649,8 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70%;
-    margin: 30px auto;
+    width: 50%;
+    padding: 30px 0;
   }
 
   .content-desc .sapaan {
@@ -653,6 +682,7 @@ textarea {
     margin: auto;
   }
 }
+
 /* animasi untuk loading button */
 
 @keyframes button-loading-spinner {
