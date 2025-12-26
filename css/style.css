@@ -121,6 +121,7 @@ body {
 
 #home {
   z-index: 9999;
+  padding: 80px 0;
 }
 
 .container-home {
@@ -189,7 +190,7 @@ body {
   margin-right: auto;
 }
 
-.container-home2 li{
+.container-home2 li {
   display: flex;
   justify-content: flex-start;
   margin-right: auto;
@@ -288,7 +289,7 @@ body {
 
 /* skill section */
 .container-3 {
-  padding: 40px 0;
+  padding: 80px 0;
 }
 
 .judulskill {
@@ -308,8 +309,8 @@ body {
   box-sizing: border-box;
 }
 
-.col a img {
-  scale: 0.8;
+.row .col a img {
+  scale: 0.9;
   z-index: -999;
   transition: 0.2s ease-in-out;
 }
@@ -598,7 +599,7 @@ textarea {
     margin-right: 20px;
   }
 
-  /* hero */
+  /* home */
   .container-home {
     z-index: -1;
     display: flex;
@@ -631,26 +632,25 @@ textarea {
     text-align: center;
   }
 
-
   .container-home2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
   }
 
   .container-home2 ul {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  /* background-color: red; */
-  align-items: center;
-  margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* background-color: red; */
+    align-items: center;
+    margin: auto;
   }
 
   .container-home2 a {
-  margin: auto;
+    margin: auto;
   }
 }
 /* animasi untuk loading button */
